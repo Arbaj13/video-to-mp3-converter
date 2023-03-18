@@ -1,4 +1,5 @@
-from pika, json
+import pika
+import json
 
 
 def upload(f, fs, channel, access):
@@ -23,7 +24,7 @@ def upload(f, fs, channel, access):
                 delivery_mode=pika.spec.PERSISTENT_DELIVERY_MODE),
 
         )
-    except:
+    except Exception as err:
+        print(err)
         fs.delete(fid)
-        return "internal error", 500
-    
+        return "internal server error", 500
