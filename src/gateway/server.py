@@ -40,7 +40,7 @@ def upload():
             return "Only one file is allowed", 400
 
         for _, f in request.files.items():
-            err = util.upload(f, fs, channel, access)
+            err = util.upload(f, fs_videos, channel, access)
 
             if err:
                 return err
