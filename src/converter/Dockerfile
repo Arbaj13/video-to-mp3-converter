@@ -12,4 +12,4 @@ COPY . /app
 
 
 
-CMD ["python3", "consumer.py"]
+CMD ["python3", "consumer.py"] 
