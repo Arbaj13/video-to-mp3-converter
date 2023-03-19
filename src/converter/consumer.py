@@ -22,7 +22,7 @@ def main():
         else:
             ch.basic_ack(delivery_tag=method.delivery_tag)
             print("Converted")
-    channel.basic_consume(queue='videos',on_message_callback=callback)
+    channel.basic_consume(queue='video',on_message_callback=callback)
 
     print("waiting for messages.To exit presss CTR+C")
 
