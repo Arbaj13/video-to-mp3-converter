@@ -28,7 +28,7 @@ def start(message,fs_videos,fs_mp3s,channel):
     try:
         channel.basic_publish(
             exchange='',
-            routing_key='mp3_queue',
+            routing_key='mp3s',
             body=json.dumps(message),
             properties=pika.BasicProperties(
                 delivery_mode = pika.spec.PERSISTENT_DELIVERY_MODE
